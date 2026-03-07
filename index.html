@@ -2,58 +2,57 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wolf Fair</title>
 
 <style>
 
 body{
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-font-family:Arial, sans-serif;
-color:white;
+    margin:0;
+    padding:0;
+    height:100vh;
+    font-family:Arial, sans-serif;
+    color:white;
+    text-align:center;
 
-/* background malam */
-background: radial-gradient(circle at center, #1a1a1a 0%, #000000 80%);
-overflow:hidden;
+    /* background hutan gelap */
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+    url("forest.jpg");
+    background-size:cover;
+    background-position:center;
 }
 
-/* bulan orange */
+/* bulan besar */
 .moon{
-position:absolute;
-top:80px;
-width:200px;
-height:200px;
-background:radial-gradient(circle,#ffb347,#ff8c00,#ff6a00);
-border-radius:50%;
-box-shadow:0 0 120px #ff8c00;
+    width:180px;
+    height:180px;
+    background:radial-gradient(circle,#ffa726,#ff8f00);
+    border-radius:50%;
+    margin:60px auto;
+    box-shadow:0 0 80px #ff9800;
 }
 
-/* logo */
+/* logo serigala */
 .logo{
-width:320px;
-filter:drop-shadow(0 0 25px orange);
-z-index:2;
+    width:280px;
+    margin:auto;
+    display:block;
+    filter: drop-shadow(0 0 30px orange);
 }
 
 /* judul */
-h1{
-margin-top:30px;
-font-size:42px;
-letter-spacing:4px;
-color:#ffa500;
-text-shadow:0 0 15px orange;
+.title{
+    font-size:36px;
+    letter-spacing:4px;
+    margin-top:20px;
+    color:#ffa726;
 }
 
-/* tulisan kecil */
-p{
-margin-top:10px;
-font-size:16px;
-color:#cccccc;
-letter-spacing:2px;
+/* teks kecil */
+.subtitle{
+    margin-top:10px;
+    color:#bbb;
+    font-size:14px;
 }
 
 </style>
@@ -63,11 +62,13 @@ letter-spacing:2px;
 
 <div class="moon"></div>
 
-<img src="file_0000000088e072078575a8a8eef5f7f6.png" class="logo">
+<img src="wolf-logo.png" class="logo">
 
-<h1>WOLF FAIR</h1>
+<div class="title">WOLF FAIR</div>
 
-<p>Early builders phase</p>
+<div class="subtitle">
+Early builders phase
+</div>
 
 </body>
 </html>
