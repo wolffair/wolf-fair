@@ -1,1 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WOLF FAIR ($WOLF)</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
 
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+font-family:'Orbitron',sans-serif;
+background:#000;
+color:#fff;
+text-align:center;
+overflow-x:hidden;
+}
+
+/* GRID BACKGROUND */
+.grid-bg{
+position:fixed;
+width:100%;
+height:100%;
+background:
+linear-gradient(rgba(255,174,0,0.08) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,174,0,0.08) 1px, transparent 1px);
+background-size:40px 40px;
+z-index:-2;
+animation:gridMove 20s linear infinite;
+}
+@keyframes gridMove{
+0%{background-position:0 0,0 0;}
+100%{background-position:0 40px,40px 0;}
+}
+
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* HERO */
+.hero{padding:120px 20px 80px;}
+
+/* LAUNCHING SOON */
+.launching{
+margin-bottom:60px;
+}
+
+.launching h2{
+font-size:64px;
+color:#ffae00;
+text-shadow:0 0 25px rgba(255,174,0,0.9);
+margin-bottom:25px;
+}
+
+.launching p{
+max-width:750px;
+margin:auto;
+font-size:18px;
+color:#ddd;
+line-height:1.7;
+}
+
+/* LOGO */
+.logo{
+width:140px;
+margin:60px 0 25px;
+filter:drop-shadow(0 0 15px rgba(255,174,0,0.6));
+animation:logoGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes logoGlow{
+0%{filter:drop-shadow(0 0 10px rgba(255,174,0,0.4));}
+100%{filter:drop-shadow(0 0 25px rgba(255,174,0,0.9));}
+}
+
+h1{
+font-size:52px;
+color:#ffb700;
+text-shadow:0 0 20px rgba(255,174,0,0.6);
+}
+
+.ticker{margin-top:10px;color:#aaa;}
+
+.tagline{
+margin-top:25px;
+font-size:18px;
+color:#ffcc33;
+letter-spacing:2px;
+}
+
+.description{
+margin:35px auto;
+max-width:650px;
+font-size:15px;
+color:#bbb;
+line-height:1.8;
+}
+
+.buttons{margin-top:40px;}
+
+.btn{
+display:inline-block;
+padding:14px 38px;
+margin:12px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+}
+
+.telegram{
+background:#ffae00;
+color:#000;
+}
+
+.channel{
+background:#111;
+border:2px solid #ffae00;
+color:#ffae00;
+}
+
+.twitter{
+border:2px solid #ffae00;
+color:#ffae00;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 0 20px rgba(255,174,0,0.6);
+}
+
+/* SECTION */
+.section{padding:90px 20px;}
+.section h2{color:#ffae00;margin-bottom:30px;}
+
+.roadmap-list{
+max-width:700px;
+margin:40px auto;
+text-align:left;
+}
+.roadmap-list li{
+margin-bottom:15px;
+color:#bbb;
+}
+
+/* FAQ */
+.faq{
+max-width:750px;
+margin:40px auto;
+text-align:left;
+}
+.faq-item{margin-bottom:25px;}
+.faq-item h4{
+color:#ffcc33;
+margin-bottom:8px;
+}
+
+footer{
+padding:60px 20px;
+font-size:13px;
+color:#777;
+border-top:1px solid #111;
+margin-top:80px;
+line-height:1.6;
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<canvas id="particles"></canvas>
+
+<div class="hero">
+
+<div class="launching">
+<h2>Launching Soon</h2>
+<p>
+Token contract, liquidity, and full tokenomics will be revealed at launch.<br>
+Stay ready.
+</p>
+</div>
+
+<img src="https://i.imgur.com/nH1nElA.jpeg" class="logo" alt="WOLF FAIR Logo">
+
+<h1>WOLF FAIR</h1>
+<div class="ticker">$WOLF</div>
+
+<div class="tagline">Strategic. Community. Momentum.</div>
+
+<div class="description">
+WOLF FAIR is a community-driven digital asset designed for structured growth,
+transparent execution, and long-term ecosystem development.
+</div>
+
+<div class="buttons">
+<a href="https://t.me/+7Lpf7AuRg98wZmZl" target="_blank" class="btn telegram">Join The Pack (Telegram Group)</a>
+<a href="https://t.me/+cAAtAKH3XzBjNTM1" target="_blank" class="btn channel">Official Channel</a>
+<a href="https://x.com/wolftwofair" target="_blank" class="btn twitter">Follow on X</a>
+</div>
+
+</div>
+<div class="section">
+<h2>Roadmap</h2>
+<ul class="roadmap-list">
+<li>Phase 1 – Branding & Community Foundation</li>
+<li>Phase 2 – Smart Contract Deployment & Liquidity Lock</li>
+<li>Phase 3 – DEX Listing & Marketing Expansion</li>
+<li>Phase 4 – Utility Integration & Ecosystem Scaling</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>FAQ</h2>
+<div class="faq">
+
+<div class="faq-item">
+<h4>Is the liquidity locked?</h4>
+<p>Yes. Liquidity lock details will be announced transparently and will be publicly verifiable at launch.</p>
+</div>
+
+<div class="faq-item">
+<h4>Is this a long-term project?</h4>
+<p>Yes. The roadmap and tokenomics structure are designed for measured, sustainable growth — not short-term spikes.</p>
+</div>
+
+<div class="faq-item">
+<h4>Where is the whitepaper?</h4>
+<p>The official whitepaper will be released alongside the launch announcement to ensure full clarity of vision and structure.</p>
+</div>
+
+</div>
+</div>
+
+<footer>
+© 2026 WOLF FAIR. All Rights Reserved.<br>
+Cryptocurrency investments involve risk. Always do your own research.
+</footer>
+
+<script>
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+let particles=[];
+for(let i=0;i<60;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+radius:Math.random()*2+1,
+speedY:Math.random()*0.5+0.2,
+alpha:Math.random()
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+particles.forEach(p=>{
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+ctx.fillStyle="rgba(255,174,0,"+p.alpha+")";
+ctx.fill();
+p.y+=p.speedY;
+if(p.y>canvas.height){
+p.y=0;
+p.x=Math.random()*canvas.width;
+}
+});
+requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+</html>
