@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -146,18 +146,6 @@ h1{
   color:#bbb;
 }
 
-/* TOKENOMICS */
-#tokenomics ul{
-  list-style:none;
-  padding-left:0;
-  margin-top:20px;
-}
-#tokenomics li{
-  margin-bottom:10px;
-  color:#bbb;
-  font-size:18px;
-}
-
 /* FAQ */
 .faq{
   max-width:750px;
@@ -214,6 +202,7 @@ footer{
   </div>
 </div>
 
+<!-- WHY -->
 <div class="section">
   <h2 style="font-size:42px; margin-bottom:30px; font-family:Orbitron, sans-serif;">Why Wolf Fair?</h2>
   <div style="max-width:800px; margin:auto; font-size:18px; line-height:1.8;">
@@ -224,6 +213,7 @@ footer{
   </div>
 </div>
 
+<!-- ROADMAP -->
 <section style="margin-top:150px;">
   <p style="text-align:center; font-size:16px; color:#cccccc; max-width:700px; margin:0 auto 30px auto; line-height:1.6;">
     Building step by step — from community foundation to ecosystem growth.
@@ -241,14 +231,14 @@ footer{
 <!-- TOKENOMICS SECTION -->
 <section class="section" id="tokenomics">
   <h2>WOLF TOKENOMICS</h2>
+  <canvas id="tokenChart" width="400" height="400" style="display:block; margin:40px auto;"></canvas>
   <div style="max-width:700px; margin:auto; text-align:left; font-size:18px; line-height:1.8; color:#bbb;">
-    <p><strong>Total Supply:</strong> 1,000,000,000 WOLF</p>
     <ul>
-      <li>• <strong>70%</strong> Community & Liquidity</li>
-      <li>• <strong>10%</strong> Giveaway & Airdrop</li>
-      <li>• <strong>10%</strong> Marketing</li>
-      <li>• <strong>5%</strong> Development (🔒)</li>
-      <li>• <strong>5%</strong> Future Ecosystem</li>
+      <li>• 70% Community & Liquidity</li>
+      <li>• 10% Giveaway & Airdrop</li>
+      <li>• 10% Marketing</li>
+      <li>• 5% Development (🔒)</li>
+      <li>• 5% Future Ecosystem</li>
     </ul>
   </div>
 </section>
@@ -278,7 +268,9 @@ footer{
   Cryptocurrency investments involve risk. Always do your own research.
 </footer>
 
+<!-- PARTICLE & TOKENOMICS SCRIPT -->
 <script>
+// PARTICLES BACKGROUND
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
@@ -295,7 +287,7 @@ for(let i=0;i<60;i++){
   });
 }
 
-function draw(){
+function drawParticles(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
   particles.forEach(p=>{
     ctx.beginPath();
@@ -308,9 +300,43 @@ function draw(){
       p.x=Math.random()*canvas.width;
     }
   });
-  requestAnimationFrame(draw);
+  requestAnimationFrame(drawParticles);
 }
-draw();
+drawParticles();
+
+// PIE CHART TOKENOMICS
+const canvasChart = document.getElementById('tokenChart');
+const ctxChart = canvasChart.getContext('2d');
+
+const data = [
+  { label: "Community & Liquidity", value: 70, color: "#ffae00" },
+  { label: "Giveaway & Airdrop", value: 10, color: "#ffcc33" },
+  { label: "Marketing", value: 10, color: "#ffaa33" },
+  { label: "Development (🔒)", value: 5, color: "#ffaa66" },
+  { label: "Future Ecosystem", value: 5, color: "#ffaa99" }
+];
+
+let startAngle = -0.5 * Math.PI; // mulai dari atas
+let currentPercent = 0;
+function drawPie() {
+  ctxChart.clearRect(0,0,canvasChart.width,canvasChart.height);
+  let angle = startAngle;
+  data.forEach(d => {
+    const sliceAngle = (d.value/100) * 2 * Math.PI * currentPercent;
+    ctxChart.beginPath();
+    ctxChart.moveTo(canvasChart.width/2, canvasChart.height/2);
+    ctxChart.arc(canvasChart.width/2, canvasChart.height/2, 150, angle, angle + sliceAngle);
+    ctxChart.closePath();
+    ctxChart.fillStyle = d.color;
+    ctxChart.fill();
+    angle += sliceAngle;
+  });
+  if(currentPercent < 1){
+    currentPercent += 0.01;
+    requestAnimationFrame(drawPie);
+  }
+}
+drawPie();
 </script>
 
 </body>
